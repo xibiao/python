@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百科全书</title>
+</head>
+<body>
+<div><h1>四大名著：</h1>
+    {% for book in books %}
+    	<div>{{ book.title }} - {{ book.author }}</div>
+    {% endfor %}
+</div>
+</body>
+</html>

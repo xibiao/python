@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python-flask</title>
+</head>
+<body>
+您好{{ username }}，欢迎来到python-flask首页
+<div>{{ person.name }} - {{ person.name | length }}</div>
+<div>{{ time | dateformat}}</div>
+{% if person.age > 18 %}
+    <div>已满18岁，可以进入网吧</div>
+{% elif person.age <= 18 and person.age > 14 %}
+    <div>大于14岁小于18岁，需要父母陪同才能进入网吧</div>
+{% else %}
+    <div>小于14岁，不可以进入网吧</div>
+{% endif %}
+</body>
+</html>

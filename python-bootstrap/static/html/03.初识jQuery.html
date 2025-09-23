@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初识jQuery</title>
+
+    <script src="../../static/js/jquery-3.7.1.js"></script>
+
+    <style>
+        .menus {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+
+        .menus .header {
+            background-color: #d58512;
+            color: #a52834;
+            padding: 10px;
+            cursor: pointer; /*鼠标放上去变成小手*/
+        }
+
+        .menus .content a {
+            padding: 10px 20px; /*给每个<a>标签添加内边距，上下是10px，左右是20px*/
+            display: block; /*让每个<a>标签变成块级标签，独占一行*/
+            border-bottom: 1px dotted #5c636a; /*在底部加个虚线*/
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--  =================== 当点击某个菜单时，展开当前菜单，隐藏其他菜单 ===================  -->
+<div class="menus">
+    <div class="item">
+        <div class="header" onclick="clickMe(this)">上海</div>
+        <div class="content hidden">
+            <a>静安区</a>
+            <a>徐汇区</a>
+            <a>虹口区</a>
+            <a>黄浦区</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header" onclick="clickMe(this)">北京</div>
+        <div class="content hidden">
+            <a>朝阳区</a>
+            <a>海淀区</a>
+            <a>大兴区</a>
+            <a>昌平区</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function clickMe(self) {
+        let nextTag = $(self).next();
+        let hasHidden = nextTag.hasClass('hidden');
+        console.log(self + ":" + hasHidden);
+        if (hasHidden) {
+            // 给所有class="content"的标签添加'hidden'样式，让这个标签隐藏起来
+            // $(".content").addClass("hidden");
+            // parent()表示找到父级标签，siblings()表示找到所有兄弟标签，
+            // 表示从父级的所有兄弟标签中查找class="content"的标签，然后添加"hidden"样式
+            $(self).parent().siblings().find(".content").addClass("hidden");
+            // 删除标签上的'hidden'样式，让标签呈现出来
+            nextTag.removeClass('hidden');
+        } else {
+            nextTag.addClass('hidden');
+        }
+    }
+</script>
+
+
+<!--  =================== 获取用户输入的值并修改 ===================  -->
+<input type="text" placeholder="用户名" id="txt_user">
+<input type="text" placeholder="邮箱" id="txt_email">
+<input type="button" value="提交" onclick="addInfo()">
+<ul id="txt_ul"></ul>
+
+<script type="text/javascript">
+    function addInfo() {
+        let userTag = $("#txt_user");
+        let emailTag = $("#txt_email");
+        let username = userTag.val();
+        let email = emailTag.val();
+        let data = username + " - " + email;
+        // 清空输入框内容
+        userTag.val("");
+        emailTag.val("");
+        // 创建<li>标签并设置内容
+        let liTag = $("<li>").text(data);
+        $("#txt_ul").append(liTag);
+    }
+</script>
+
+
+<!--  =================== 删除表格中的数据行 ===================  -->
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>用户名</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>andy</td>
+        <td>
+            <input type="button" value="删除" class="delete">
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>lily</td>
+        <td>
+            <input type="button" value="删除" class="delete">
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(function() {
+        // 当点击class="delete"的标签按钮时，获取父级的父级标签进行删除，此处表示删除一行数据
+        $(".delete").click(function () {
+            $(this).parent().parent().remove();
+        });
+    });
+</script>
+</body>
+</html>

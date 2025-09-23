@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初识JavaScript</title>
+    <style>
+        .menus {
+            border: 1px solid #000;
+            height: 200px;
+            width: 300px;
+        }
+
+        .menus .header {
+            background-color: pink;
+            height: 50px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="menus">
+    <div class="header" onclick="fun()">标题</div>
+    <div class="content">
+        <span id="txt">中国欢迎您</span>
+    </div>
+
+    <ul id="city"></ul>
+</div>
+
+
+<script type="text/javascript">
+    function fun() {
+        var name = 'Hello JavaScript';
+        alert(name);
+        console.log(name);  // F12浏览器控制台Console输出日志信息
+    }
+</script>
+
+<script type="text/javascript">
+    /* 跑马灯案例 */
+    function fun1() {
+        // 通过DOM从HTML文档中获取某个标签
+        var tag = document.getElementById("txt");
+        var data = tag.innerText;
+        // 将第一个字符放到末尾
+        var firstString = data[0];
+        var otherString = data.substring(1, data.length);
+        var newString = otherString + firstString;
+        // 更新HTML标签中的内容
+        tag.innerText = newString;
+    }
+
+    // 定时器每隔1秒执行一次fun1函数
+    setInterval(fun1, 1000);
+</script>
+
+
+<script type="text/javascript">
+    var cities = ['北京', '上海', '广州', '深圳']
+    for (var i = 0; i < cities.length; i++) {
+        var city = cities[i];
+        console.log(city);
+        // 创建<li>标签
+        var tag = document.createElement("li");
+        // 给标签添加内容
+        tag.innerText = city;
+        // 通过DOM获取id="city"的标签
+        var parentTag = document.getElementById("city");
+        // 添加子标签
+        parentTag.appendChild(tag);
+    }
+</script>
+
+
+<!--  =================== 创建表格 ===================  -->
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>name</td>
+        <td>age</td>
+    </tr>
+    </thead>
+    <tbody id="table_body"></tbody>
+</table>
+
+<script type="text/javascript">
+    let datas = [
+        {id: 1, name: "andy", age: 20},
+        {id: 2, name: "lily", age: 18},
+        {id: 3, name: "bob", age: 16}
+    ];
+    tbodyTag = document.getElementById("table_body");
+    for (let i = 0; i < datas.length; i++) {
+        let dict = datas[i];
+        let trTag = document.createElement("tr");
+        for (let key in dict) {
+            let value = dict[key];
+            console.log(key + ":" + value)
+            let tdTag = document.createElement("td");
+            tdTag.innerText = value;
+            trTag.appendChild(tdTag);
+        }
+        tbodyTag.appendChild(trTag);
+    }
+</script>
+
+
+<!--  =================== 根据用户输入内容创建列表 ===================  -->
+<div>
+    <input type="text" placeholder="请输入内容" id="input_txt">
+    <input type="button" value="添加" onclick="addData()">
+    <ol id="add_ol"></ol>
+</div>
+
+<script type="text/javascript">
+    function addData() {
+        // 通过DOM根据id获取标签
+        let inputTag = document.getElementById("input_txt");
+        // 获取input输入框中的内容
+        let data = inputTag.value;
+        // 清空输入框内容
+        inputTag.value = "";
+        if (data === null || data.length === 0 || data.trim() === "") {
+            alert("输入内容不能为空")
+            return;
+        }
+        console.log(data)
+        // 创建<li>标签
+        let liTag = document.createElement("li");
+        // 给标签添加内容
+        liTag.innerText = data;
+        let olTag = document.getElementById("add_ol");
+        // 添加子标签
+        olTag.appendChild(liTag);
+    }
+</script>
+
+</body>
+</html>

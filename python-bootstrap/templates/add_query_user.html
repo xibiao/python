@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+
+    <link rel="stylesheet" href="../../python-django/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <!-- 导入JS，bootstrap依赖jQuery，要先导入jquery.js，后导入bootstrap.js -->
+    <script src="../../python-django/static/js/jquery-3.7.1.js"></script>
+    <script src="../../python-django/static/plugins/bootstrap-3.4.1/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<div>
+    <form method="post" action="/add/user">
+        <input type="text" name="username" placeholder="用户名">
+        <input type="password" name="password" placeholder="密码">
+        <input type="text" name="mobile" placeholder="手机号">
+        <input type="submit" value="提 交">
+    </form>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>用户ID</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>手机号</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+                <td>{{ user[3] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

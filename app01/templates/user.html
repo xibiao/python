@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.css' %}">
+
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.js' %}"></script>
+</head>
+<body>
+<div class="container" style="margin: 50px auto">
+    <form method="post" action="/user/add/">
+        {% csrf_token %}
+        <input type="text" name="user" placeholder="用户名">
+        <input type="password" name="pwd" placeholder="密码">
+        <input type="text" name="age" placeholder="年龄">
+        <input type="submit" value="提 交">
+    </form>
+</div>
+
+<div class="container" style="margin: 50px auto">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>用户ID</td>
+            <td>用户名称</td>
+            <td>密码</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for data in data_list %}
+        	<tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.username }}</td>
+            <td>{{ data.password }}</td>
+            <td>{{ data.age }}</td>
+            <td>
+                <a href="/user/delete?id={{ data.id }}">删除</a>
+            </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

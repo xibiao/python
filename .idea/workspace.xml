@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="24038b7b-36e5-4318-a84d-91b25da0e468" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/python-django.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/img/三国演义.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/img/水浒传.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/img/红楼梦.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/img/西游记.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/js/jquery-3.7.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-3.4.1/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.no.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.rs-latin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.rs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/static/plugins/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/utils/respResult.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="337lSbmVV83UwyTlH6ztrbET5dA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.python-django.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/ProgramFiles/workspace/com/learn/python/python-web/python-django/app01/static/plugins",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\static\plugins" />
+      <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\static\js" />
+      <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\static\img" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="python-django" type="Python.DjangoServer" factoryName="Django server">
+      <module name="python-django" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="python_django.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.178" />
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24038b7b-36e5-4318-a84d-91b25da0e468" name="Changes" comment="" />
+      <created>1758675991952</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758675991952</updated>
+      <workItem from="1758675993047" duration="1076000" />
+      <workItem from="1758680163041" duration="3494000" />
+      <workItem from="1758695904351" duration="9187000" />
+      <workItem from="1758712633660" duration="11906000" />
+      <workItem from="1758759340960" duration="860000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app01/users.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

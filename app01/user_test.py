@@ -66,14 +66,14 @@ def deleteByName(request):
 def add(request):
     try:
         if request.method == "GET":
-            return render(request, "user.html")
+            return render(request, "user_test.html")
         data = request.POST
         user = data.get('user')
         pwd = data.get('pwd')
         age = data.get('age')
         print("username:", user + ", password:", pwd)
         UserInfo.objects.create(username=user, password=pwd, age=age)
-        return redirect('/user/info')
+        return redirect('/user_test/info')
     except Exception as e:
         return RespResult.error(str(e))
 
@@ -81,14 +81,14 @@ def add(request):
 def get_user_info(request):
     userAll = UserInfo.objects.all()
     print("查询结果：", serializers.serialize("python", userAll))
-    return render(request, "user.html", {"data_list": userAll})
+    return render(request, "user_test.html", {"data_list": userAll})
 
 
 def delete(request):
     try:
         id = request.GET.get("id")
         UserInfo.objects.filter(id=id).delete()
-        return redirect('/user/info')
+        return redirect('/user_test/info')
     except Exception as e:
         return RespResult.error(str(e))
 

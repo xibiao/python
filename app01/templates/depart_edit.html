@@ -1,0 +1,30 @@
+{% extends 'basic_layout.html' %}
+
+{% block content %}
+    <!-- 带有表单的面板，用于修改部门 -->
+    <div class="container" style="margin: 20px auto">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <!-- <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 修改部门 -->
+                <h3 class="panel-title"> 修改部门 </h3>
+            </div>
+            <div class="panel-body">
+                <!-- action属性可以不写，默认请求当前页面，也就是说与GET一样请求的是同一个URL -->
+                <!-- <form method="post" action="/depart/{id}/edit"> -->
+                <form method="post">
+                    {% csrf_token %}
+                    {% if err_msg %}
+                        <script type="text/javascript">alert("{{ err_msg }}");</script>
+                    {% endif %}
+                    <div class="form-group">
+                        <label>部门</label>
+                        <input type="text" class="form-control" name="depart" placeholder="部门名称"
+                               value="{{ depart.title }}"/>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="提 交">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

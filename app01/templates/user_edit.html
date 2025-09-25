@@ -1,0 +1,35 @@
+{% extends 'basic_layout.html' %}
+
+{% block content %}
+    <!-- 带有表单的面板，用于修改用户 -->
+    <div class="container" style="margin: 20px auto">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <!-- <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 修改用户 -->
+                <h3 class="panel-title"> 修改用户 </h3>
+            </div>
+            <div class="panel-body">
+                <!-- action属性可以不写，默认请求当前页面，也就是说与GET一样请求的是同一个URL -->
+                <!-- novalidate属性表示提交表单时关闭浏览器的校验功能 -->
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <!-- 如果修改用户失败，则弹框提示 -->
+                    {% if err_msg %}
+                        <script type="text/javascript">
+                            alert("{{ err_msg }}");
+                        </script>
+                    {% endif %}
+                    <!-- ModelForm方式 -->
+                    {% for field in form %}
+                        <label>
+                            {{ field.label }}  <span style="color: red">{{ field.errors.0 }}</span>
+                        </label>
+                        {{ field }}
+                    {% endfor %}
+
+                    <input type="submit" class="btn btn-primary" value="提 交">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

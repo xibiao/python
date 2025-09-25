@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24038b7b-36e5-4318-a84d-91b25da0e468" name="Changes" comment="" />
+    <list default="true" id="24038b7b-36e5-4318-a84d-91b25da0e468" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app01/departs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0003_alter_userinfo_create_time_alter_userinfo_depart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/model_forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/basic_layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/depart_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/depart_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/depart_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/user_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/user_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/templates/user_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f1535c9-7577-4c40-a2a9-e12347b6ac3d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f1535c9-7577-4c40-a2a9-e12347b6ac3d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app01/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app01/templates/user_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app01/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app01/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/user_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_django/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_django/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -36,6 +57,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xibiao&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/xibiao/python.git&quot;,
+    &quot;accountId&quot;: &quot;610e03ad-545d-466c-be17-208195917dd5&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -58,8 +91,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Rebasing feature-01",
-    "last_opened_file_path": "D:/ProgramFiles/workspace/com/learn/python/python-web/python-django/app01/static/plugins",
+    "git-widget-placeholder": "Rebasing feature-02",
+    "last_opened_file_path": "D:/ProgramFiles/workspace/com/learn/python/python-web/python-django/app01/templates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,6 +108,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\templates" />
       <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\static\plugins" />
       <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\static\js" />
       <recent name="D:\ProgramFiles\workspace\com\learn\python\python-web\python-django\app01\static\img" />
@@ -127,6 +161,8 @@
       <workItem from="1758695904351" duration="9187000" />
       <workItem from="1758712633660" duration="11906000" />
       <workItem from="1758759340960" duration="860000" />
+      <workItem from="1758782141292" duration="12411000" />
+      <workItem from="1758797131140" duration="10807000" />
     </task>
     <servers />
   </component>
@@ -148,9 +184,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app01/users.py</url>
+          <url>file://$PROJECT_DIR$/app01/user_test.py</url>
           <line>22</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app01/user.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app01/user.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/app01/templates/user_add.html</url>
+          <line>21</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

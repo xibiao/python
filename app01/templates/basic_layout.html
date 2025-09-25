@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户部门管理系统</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <!-- fontawesome字体下载地址：https://fontawesome.dashgame.com/ -->
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!-- 在父模板中定义，在子模板中具体实现 -->
+    {% block css %}{% endblock %}
+
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+    <!-- 在父模板中定义，在子模板中具体实现 -->
+    {% block js %}{% endblock %}
+
+</head>
+<body>
+<!-- 导航条 -->
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">用户部门管理系统</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/depart/list/">部门管理</a></li>
+                <li><a href="/user/list">用户管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Andy <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">我的主页</a></li>
+                        <li><a href="#">个人信息</a></li>
+                        <li><a href="#">最新动态</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 在父模板中定义，在子模板中具体实现 -->
+{% block content %}{% endblock %}
+
+</body>
+</html>

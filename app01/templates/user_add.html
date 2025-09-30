@@ -1,5 +1,27 @@
 {% extends 'basic_layout.html' %}
 
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}">
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+    <!-- 使用datetimepicker插件实现日期的选择 -->
+    <script type="text/javascript">
+        $(function () {
+            $("#id_create_time").datetimepicker({
+                format: "yyyy-mm-dd",
+                startDate: "0",
+                language: "zh-CN",
+                autoclose: true
+            });
+        });
+    </script>
+{% endblock %}
+
 {% block content %}
     <!-- 带有表单的面板，用于新建用户 -->
     <div class="container" style="margin: 20px auto">
@@ -19,9 +41,11 @@
                         </script>
                     {% endif %}
                     <!-- ModelForm方式 -->
+                    <!-- 通过ModelForm方式生成的标签会给每个字段标签生成一个id="id_字段名"，例如 UserInfo 的username字段，生成的标签如下：
+                     <input type="text" name="username" class="form-control" placeholder="用户名" id="id_username"> -->
                     {% for field in form %}
                         <label>
-                            {{ field.label }}  <span style="color: red">{{ field.errors.0 }}</span>
+                            {{ field.label }} <span style="color: red">{{ field.errors.0 }}</span>
                         </label>
                         {{ field }}
                     {% endfor %}

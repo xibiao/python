@@ -1,0 +1,95 @@
+{% extends 'basic_layout.html' %}
+
+{% block content %}
+    <!-- 带有表格的面板，用于展示靓号列表 -->
+    <div class="container">
+        <!-- 父容器使用"clearfix"清除浮动，若子元素存在浮动元素，则父容器需要使用"clearfix"清除浮动，强制父容器包裹浮动元素 -->
+        <div class="clearfix" style="margin-bottom: 10px">
+            <!-- "pull-left"表示让div居左展示，即向左浮动，该元素变成浮动元素，或者使用样式 style="float: left" -->
+            <div class="pull-left">
+                <!-- target="_self"表示在当前页面打开href指向的路径，这是默认选项，target="_blank"表示跳转到新页面打开 -->
+                <a class="btn btn-success" href="/pretty_num/add/" target="_self">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 新增靓号
+                </a>
+            </div>
+            <!-- "pull-right"表示让div居右展示，即向右浮动，该元素变成浮动元素，或者使用样式 style="float: right" -->
+            <div class="pull-right">
+                <!-- 搜索框，如果不写action，会请求当前页面，即pretty_num_list.html，也就是调用 /pretty_num/list 接口 -->
+                <!-- <form class="navbar-form" method="get" action="/pretty_num/search"> -->
+                <form class="navbar-form" method="get">
+                    <div class="form-group">
+                        <!-- value="param"表示将用户输入的数据传回给前端进行回显，param是接收用户输入的数据 -->
+                        <input type="text" class="form-control" name="search" placeholder="手机号" value="{{ search_data }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">
+                        <!-- 使用fontawesome的图标代替文字"搜索" -->
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- 面板 -->
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 靓号列表
+            </div>
+            <!-- 表格 -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>手机号</th>
+                    <th>价格</th>
+                    <th>级别</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in pretty_nums %}
+                    <tr>
+                        <td>{{ obj.id }}</td>
+                        <td>{{ obj.mobile }}</td>
+                        <td>{{ obj.price }}</td>
+                        <td>{{ obj.get_level_display }}</td>
+                        <td>{{ obj.get_status_display }}</td>
+                        <td>
+                            <a class="btn btn-primary btn-xs" href="/pretty_num/{{ obj.id }}/edit/">
+                                <!-- 使用fontawesome的图标 -->
+                                <i class="fa fa-edit" aria-hidden="true"></i> 编辑
+                            </a>
+                            <a class="btn btn-danger btn-xs" href="/pretty_num/delete?id={{ obj.id }}">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i> 删除
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- 分页 -->
+        <div>
+            <ul class="pagination">
+                {{ page_str }}
+                <!--
+                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="?page=2">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+
+                <li>
+                    <form method="get" style="float: left; margin-left: 2px">
+                        <input type="text" name="page" class="form-control" placeholder="页码"
+                        style="position: relative;float: left;display: inline-block;width: 80px;border-radius: 0">
+                        <button class="btn btn-default" type="submit" style="border-radius: 0">跳转</button>
+                    </form>
+                </li>
+                -->
+            </ul>
+        </div>
+    </div>
+{% endblock %}

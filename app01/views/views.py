@@ -1,4 +1,3 @@
-from django.db.models.fields import return_None
 from django.shortcuts import HttpResponse, render, redirect
 
 

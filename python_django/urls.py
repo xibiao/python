@@ -15,9 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
 from django.urls import path
-from app01 import views, user_test, departs, user
+from app01.views import views, user, departs, pretty_nums, user_test
+
 # Unresolved reference 'app01'
 
 
@@ -36,14 +36,23 @@ urlpatterns = [
     path('user_test/info/', user_test.get_user_info),
     path('user_test/delete/', user_test.delete),
 
+    # 部门管理
     path('depart/list/', departs.depart_list),
     path('depart/add/', departs.depart_add),
     path('depart/delete/', departs.depart_delete),
     path('depart/<int:id>/edit/', departs.depart_edit),
 
+    # 用户管理
     path('user/list/', user.user_list),
     path('user/add/', user.user_add),
     path('user/<int:id>/edit/', user.user_edit),
     path('user/delete/', user.user_delete),
+
+    # 靓号管理
+    path('pretty_num/list/', pretty_nums.pretty_num_list),
+    path('pretty_num/add/', pretty_nums.pretty_num_add),
+    path('pretty_num/<int:id>/edit/', pretty_nums.pretty_num_edit),
+    path('pretty_num/delete/', pretty_nums.pretty_num_delete),
+    path('pretty_num/search/', pretty_nums.pretty_num_search),
 
 ]

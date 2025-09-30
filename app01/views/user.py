@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from app01.models import UserInfo, Department
-from app01.model_forms import UserForm
+from app01.models import UserInfo
+from app01.forms.model_forms import UserForm
 
 
 def user_list(request):
@@ -68,6 +68,8 @@ def user_edit(request, id):
             return render(request, 'user_edit.html', {"form": user_form})
         # 获取POST方式提交的数据，校验之后若无问题则保存到数据库中，修改数据时需要提供instance，否则就是新增
         user_form = UserForm(data=request.POST, instance=user_info)
+        for field in user_form.fields:
+            print(f"post方式-field:{field},value:{getattr(user_info, field)}")
         if user_form.is_valid():
             user_form.save()
             print("修改用户成功:", user_form)

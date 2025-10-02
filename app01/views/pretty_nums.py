@@ -19,6 +19,8 @@ def pretty_num_list(request):
         # 如果param不为空，则作为条件进行过滤，否则表示查询全部
         print("param======", param)
         condition = {"mobile__contains": param}
+    else:
+        param = "130"
     queryset = PrettyNum.objects.filter(**condition).order_by("-level")
     # queryset = PrettyNum.objects.filter(mobile__contains=param).order_by("-level")
 
@@ -123,6 +125,9 @@ def pretty_num_add(request):
 def pretty_num_edit(request, id):
     try:
         num = PrettyNum.objects.get(id=id)
+        if not num:
+            # return render(request, "pretty_num_edit.html", {"err_msg": f"靓号{id}不存在"})
+            raise RuntimeError(f"靓号{id}不存在")
         if request.method == "GET":
             # 将查询到的数据封装到ModelForm中，用于在界面上展示修改之前的数据
             form = PrettyNumEditModelForm(instance=num)
@@ -141,6 +146,9 @@ def pretty_num_edit(request, id):
 
 def pretty_num_delete(request):
     id = request.GET.get("id")
+    data_from_db = PrettyNum.objects.get(id=id)
+    if not data_from_db:
+        return render(request, "pretty_num_list.html", {"err_msg": f"靓号{id}不存在"})
     PrettyNum.objects.get(id=id).delete()
     return redirect("/pretty_num/list")
 

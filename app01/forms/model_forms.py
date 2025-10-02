@@ -1,8 +1,8 @@
 from django import forms
 from django.core.validators import RegexValidator, ValidationError
 from app01.forms.bootstrap_forms import BootstrapModelForm
-
-from app01.models import UserInfo, PrettyNum
+from app01.models import UserInfo, PrettyNum, AdminInfo
+from app01.utils.encrypt import md5
 
 
 class UserForm(BootstrapModelForm):
@@ -20,6 +20,7 @@ class UserForm(BootstrapModelForm):
         # django.core.exceptions.FieldError: 'create_time' cannot be specified for UserInfo model form as it is a non-editable field
         # fields = ['username', 'password', 'age', 'gender', 'account', 'depart']
         fields = ['username', 'password', 'age', 'gender', 'account', 'create_time', 'depart']
+
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -27,7 +28,6 @@ class UserForm(BootstrapModelForm):
             if name == 'password':
                 field.widget.attrs['type'] = 'password'
     """
-
 
 
 class PrettyNumModelForm(BootstrapModelForm):
@@ -40,7 +40,6 @@ class PrettyNumModelForm(BootstrapModelForm):
         # fields = "__all__"
         # exclude = ['level']
         fields = ['mobile', 'price', 'level', 'status']
-
 
     """
     # 校验方式2：钩子函数，函数名是"clean_字段名"
@@ -82,5 +81,39 @@ class PrettyNumEditModelForm(BootstrapModelForm):
         is_exists = PrettyNum.objects.filter(mobile=mobile).exclude(id=pk).exists()
         if is_exists:
             raise ValidationError('该手机号已存在，请更换一个手机号')
-        # 若验证通过，则返回用户输入的数据
+        # 若验证通过，则返回用户输入的数据，该数据需要保存到数据库中
         return mobile
+
+
+class AdminModelForm(BootstrapModelForm):
+    # ModelForm默认只对字段是否为空或字段值是否符合表结构设计进行校验，若要校验其他逻辑，需要自己手动校验
+    # 例如，可以对用户名的长度进行校验
+    username = forms.CharField(min_length=2, max_length=10, label="用户名")
+    # 让密码输入框变成掩码形式（显示为圆点...），render_value=True 表示将原密码显示在输入框中
+    password = forms.CharField(widget=forms.PasswordInput(render_value=True), min_length=6, label="密码")
+    confirm_password = forms.CharField(widget=forms.PasswordInput(render_value=True), label="确认密码")
+
+    class Meta:
+        model = AdminInfo
+        fields = ['username', 'password']
+
+    # 钩子函数，对 password 字段进行加密，保存到数据库的是加密后的密码
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        return md5(password)
+
+    # 钩子函数，对 confirm_password 字段进行校验
+    def clean_confirm_password(self):
+        password = self.cleaned_data['password']
+        confirm_password = md5(self.cleaned_data['confirm_password'])
+        if password != confirm_password:
+            raise ValidationError("确认密码必须与密码保持一致")
+        return confirm_password
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label="用户名", widget=forms.TextInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(label="密码",
+                               widget=forms.PasswordInput(render_value=True, attrs={'class': 'form-control'}))
+    code = forms.CharField(label="验证码", widget=forms.TextInput(attrs={'class': 'form-control'}))
+

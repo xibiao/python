@@ -44,13 +44,13 @@ def user_add(request):
     try:
         if request.method == "GET":
             user_form = UserForm()
-            print("新增用户：", user_form)
+            # print("新增用户：", user_form)
             return render(request, "user_add.html", {"form": user_form})
         # 获取POST方式提交的数据，校验之后若无问题则保存到数据库中
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
             user_form.save()
-            print("新增用户成功:", user_form)
+            # print("新增用户成功:", user_form)
             return redirect("/user/list")
         return render(request, "user_add.html", {"err_msg": "存在非法字段", "form": user_form})
     except Exception as e:
@@ -62,6 +62,9 @@ def user_edit(request, id):
     try:
         # 从数据库中根据id查询数据
         user_info = UserInfo.objects.get(id=id)
+        if not user_info:
+            # return render(request, "pretty_num_list.html", {"err_msg": f"用户{id}不存在"})
+            raise RuntimeError(f"用户{id}不存在")
         if request.method == "GET":
             # 将查询到的数据封装到ModelForm中，用于在界面上展示修改之前的数据
             user_form = UserForm(instance=user_info)
@@ -72,7 +75,7 @@ def user_edit(request, id):
             print(f"post方式-field:{field},value:{getattr(user_info, field)}")
         if user_form.is_valid():
             user_form.save()
-            print("修改用户成功:", user_form)
+            # print("修改用户成功:", user_form)
             return redirect("/user/list")
         return render(request, 'user_edit.html', {"err_msg": "存在非法字段", "form": user_form})
     except Exception as e:

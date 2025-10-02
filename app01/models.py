@@ -14,7 +14,7 @@ class UserInfo(models.Model):
     """用户信息表"""
     # null=False表示数据库该字段不允许为空，blank=False表示向表中插入数据提交表单时该字段不能为空
     username = models.CharField(verbose_name="用户名", max_length=20, null=False, blank=False)
-    password = models.CharField(verbose_name="密码", max_length=20, null=False, blank=False)
+    password = models.CharField(verbose_name="密码", max_length=40, null=False, blank=False)
     # IntegerField、DateTimeField‌：默认null=True但blank=False，允许数据库存储空值（NULL），但表单提交时必须提供值
     age = models.IntegerField(verbose_name="年龄")
     # 若向已存在的表中新增字段，需要设置默认值或者允许为空
@@ -51,5 +51,14 @@ class PrettyNum(models.Model):
     level = models.SmallIntegerField(verbose_name="级别", choices=level_choices, default=1)
     status_choices = ((1, '已占用'), (2, '未使用'))
     status = models.SmallIntegerField(verbose_name="状态", choices=status_choices, default=2)
+
+
+
+class AdminInfo(models.Model):
+    """管理员信息表"""
+    # null=False表示数据库该字段不允许为空，blank=False表示向表中插入数据提交表单时该字段不能为空
+    username = models.CharField(verbose_name="用户名", max_length=20, null=False, blank=False)
+    # md5加密后密码长度是32，例如：4cb71e3e8025a4b1d36801e482170a00
+    password = models.CharField(verbose_name="密码", max_length=40, null=False, blank=False)
 
 

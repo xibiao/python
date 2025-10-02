@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.css' %}">
+
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.js' %}"></script>
+
+    <style>
+        .myform {
+            width: 400px;
+            /*height: 200px;*/
+            margin: 100px auto; /*距离顶端100px，水平居中*/
+            border: 1px solid #5c636a; /*添加边框*/
+            border-radius: 5px; /*给边框设置圆角*/
+            box-shadow: 5px 5px 10px #5c636a;
+            /*margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;*/
+            padding: 10px 40px; /*添加内边距，上下距离边框10px，左右距离边框40px*/
+        }
+
+        .myform h2 {
+            text-align: center;
+        }
+
+        .myform .form-group {
+            /*margin: 10px;*/ /*添加外边距，上下左右距离边框10px*/
+            margin: 20px 0; /*添加外边距，上下距离边框10px，左右是0px*/
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- 表单 -->
+<div class="myform">
+    <h2>用户登录</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% comment %}
+        {% for field in form %}
+            <div class="form-group">
+                <label>{{ field.label }}</label> <span style="color: red">{{ field.errors.0 }}</span>
+                {{ field }}
+            </div>
+        {% endfor %}
+        {% endcomment %}
+        <div class="form-group">
+            <label>用户名</label>
+            {{ form.username }}
+            <span style="color: red;">{{ form.username.errors.0 }}</span>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+            {{ form.password }}
+            <span style="color: red;">{{ form.password.errors.0 }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="id_code">图片验证码</label>
+            <div class="row">
+                <div class="col-xs-7">
+                    {{ form.code }}
+                    <span style="color: red;">{{ form.code.errors.0 }}</span>
+                </div>
+                <div class="col-xs-5">
+                    <img src="/image/code/" id="image_code" style="width: 120px" alt="验证码">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">登 录</button>
+        <div>
+            <span style="color: red">{{ err_msg }}</span>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

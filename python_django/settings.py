@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
 import os.path
 from pathlib import Path
 
@@ -47,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 添加自定义插件
+    'app01.utils.middleware.LoginMiddleware',
 ]
 
 ROOT_URLCONF = 'python_django.urls'
@@ -127,6 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 # 修改点5：将STATIC_URL的值修改成'/static/'
 STATIC_URL = '/static/'
+
+# 添加静态文件目录配置（确保目录存在）
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'app01/static'),  # 假设项目根目录下有 'static' 文件夹
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

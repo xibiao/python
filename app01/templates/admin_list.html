@@ -1,0 +1,56 @@
+{% extends 'basic_layout.html' %}
+
+{% block content %}
+    <!-- 带有表格的面板，用于展示管理员列表 -->
+    <div class="container">
+        <div style="margin-bottom: 10px">
+            <!-- target="_self"表示在当前页面打开href指向的路径，这是默认选项，target="_blank"表示跳转到新页面打开 -->
+            <a class="btn btn-success" href="/admin/add/" target="_self">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 新建管理员
+            </a>
+        </div>
+        <!-- 面板 -->
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 管理员列表
+            </div>
+            <!-- 表格 -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in queryset %}
+                    <tr>
+                        <td>{{ obj.id }}</td>
+                        <td>{{ obj.username }}</td>
+                        <td>******</td>
+                        <td>
+                            <a class="btn btn-primary btn-xs" href="/admin/{{ obj.id }}/edit/">
+                                <!-- 使用fontawesome的图标 -->
+                                <i class="fa fa-edit" aria-hidden="true"></i> 编辑
+                            </a>
+                            <a class="btn btn-danger btn-xs" href="/admin/{{ obj.id }}/delete">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i> 删除
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 分页 -->
+        <div>
+            <ul class="pagination">
+                {{ page_str }}
+            </ul>
+        </div>
+    </div>
+{%  endblock %}

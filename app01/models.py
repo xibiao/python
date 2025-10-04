@@ -33,12 +33,17 @@ class UserInfo(models.Model):
     # models.SET_NULL表示删除关联表(此处是部门表)中的数据时，不删除本表(用户信息表)中的数据，让外键置空（前提是允许外键为空）
     # depart = models.ForeignKey(to="Department", to_field="id", null=True, blank=True, on_delete=models.SET_NULL)
 
+    # 由于OrderInfo表通过外键关联到了UserInfo表，新增订单时看到的是UserInfo对象，通过重写__str__方法返回用户名称
+    def __str__(self):
+        return self.username
+
 
 class Department(models.Model):
     """部门表"""
     title = models.CharField(verbose_name="部门名称", max_length=24, null=False, blank=False)
 
     # print(Department对象)就会调用__str__方法，类似于java中的toString方法
+    # 由于UserInfo表通过外键关联到了Department表，新增用户时看到的是Department对象，通过重写__str__方法返回部门名称
     def __str__(self):
         return self.title
 
@@ -60,5 +65,18 @@ class AdminInfo(models.Model):
     username = models.CharField(verbose_name="用户名", max_length=20, null=False, blank=False)
     # md5加密后密码长度是32，例如：4cb71e3e8025a4b1d36801e482170a00
     password = models.CharField(verbose_name="密码", max_length=40, null=False, blank=False)
+
+
+
+class OrderInfo(models.Model):
+    """订单信息表"""
+    order_no = models.CharField(verbose_name="订单号", max_length=32, null=False, blank=False)
+    goods_name = models.CharField(verbose_name="商品名称", max_length=32, null=False, blank=False)
+    price = models.IntegerField(verbose_name="价格", null=False, blank=False)
+    status_choices = ((1, '待支付'), (2, '已支付'))
+    status = models.SmallIntegerField(verbose_name="状态", choices=status_choices, default=1)
+    # 通过外键关联到用户表UserInfo，models.CASCADE表示级联删除，当删除某个用户时，会级联删除该用户的订单信息
+    # 在UserInfo类中需要重写__str__方法，返回用户名，这样在浏览器界面新增订单时可以看到用户名，否则看到的是用户对象
+    user = models.ForeignKey(verbose_name="用户", to=UserInfo, on_delete=models.CASCADE)
 
 

@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'python_django.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # 修改点3：使用MySQL数据库连接信息
+# pip install mysqlclient
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

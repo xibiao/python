@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.urls import path
-from app01.views import views, user, departs, pretty_nums, user_test, admin
+from app01.views import views, user, departs, pretty_nums, user_test, admin, order
 
 # Unresolved reference 'app01'
 
@@ -63,5 +63,12 @@ urlpatterns = [
     path('admin/<int:id>/delete/', admin.admin_delete),
     # 生成图片验证码
     path('image/code/', views.gene_image_code),
+
+    # 订单管理
+    path('order/list/', order.order_list),
+    path('order/add/', order.order_add),
+    path('order/delete/', order.order_delete),
+    path('order/detail/', order.order_detail),
+    path('order/edit/', order.order_edit),
 
 ]

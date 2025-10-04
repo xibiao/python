@@ -1,7 +1,7 @@
 from django import forms
 from django.core.validators import RegexValidator, ValidationError
 from app01.forms.bootstrap_forms import BootstrapModelForm
-from app01.models import UserInfo, PrettyNum, AdminInfo
+from app01.models import UserInfo, PrettyNum, AdminInfo, OrderInfo
 from app01.utils.encrypt import md5
 
 
@@ -116,4 +116,12 @@ class LoginForm(forms.Form):
     password = forms.CharField(label="密码",
                                widget=forms.PasswordInput(render_value=True, attrs={'class': 'form-control'}))
     code = forms.CharField(label="验证码", widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+
+class OrderModelForm(BootstrapModelForm):
+    class Meta:
+        model = OrderInfo
+        # fields = "__all__"
+        # 在界面上不展示'order_no', 'user'(外键对应的表字段是user_id)
+        exclude = ['order_no', 'user']
 

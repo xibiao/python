@@ -132,12 +132,56 @@ USE_TZ = True
 # 修改点5：将STATIC_URL的值修改成'/static/'
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
 # 添加静态文件目录配置（确保目录存在）
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'app01/static'),  # 假设项目根目录下有 'static' 文件夹
+    # os.path.join(BASE_DIR, 'app01/static'),  # 假设项目根目录下有 'static' 文件夹
+    os.path.join(BASE_DIR, 'app01'),
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 日志配置
+log_file_path = os.path.join(STATICFILES_DIRS[0], 'logs')
+if not os.path.exists(log_file_path):
+    os.makedirs(log_file_path)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process} {thread} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',  # 日志文件的日志级别是'INFO'(若根日志级别比此处的级别高，则使用根日志级别)
+            'class': 'logging.handlers.RotatingFileHandler',  # 滚动生成日志，防止日志文件太大
+            'filename': os.path.join(log_file_path, 'app.log'),
+            'maxBytes': 102410245,  # 每个日志文件大小是5MB
+            'backupCount': 50,  # 最多保存50个日志文件
+            'formatter': 'verbose',
+            'encoding': 'utf-8'
+        },
+        'console': {
+            'level': 'DEBUG',  # 控制台的日志级别是'DEBUG'(若根日志级别比此处的级别高，则使用根日志级别)
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file'],
+        'level': 'DEBUG',  # 根日志的日志级别是'DEBUG'
+    },
+}

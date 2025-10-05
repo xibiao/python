@@ -70,3 +70,20 @@ def index(request):
 
 # 6.点击运行按钮启动项目，或者在终端执行命令：python manage.py runserver [8000]，默认占用8000端口
 在浏览器上访问 http://127.0.0.1:8000/index/ ，验证结果
+
+
+# 7.启用media目录
+# (1)修改urls.py文件
+from django.urls import path, re_path
+from django.views.static import serve
+from django.conf import settings
+在urlpatterns中添加
+re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}, name='media'),
+# (2)修改settings.py文件
+在settings.py文件中添加
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+
+# bootstrap中文文档：https://v3.bootcss.com/components/#navbar-forms
+

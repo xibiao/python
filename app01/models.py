@@ -80,3 +80,13 @@ class OrderInfo(models.Model):
     user = models.ForeignKey(verbose_name="用户", to=UserInfo, on_delete=models.CASCADE)
 
 
+# 用于测试图片上传
+class User(models.Model):
+    name = models.CharField(verbose_name='姓名', max_length=20)
+    age = models.IntegerField(verbose_name='年龄', max_length=3)
+    # Form方式将图片保存到数据库，保存的是图片路径
+    # avatar = models.CharField(verbose_name='头像', max_length=128)
+    # ModalForm方式将图片保存到数据库，保存的也是图片路径，会自动将图片保存到media目录下的'upload_to'属性指定的目录下
+    avatar = models.FileField(verbose_name='头像', max_length=128, upload_to='avatar')
+
+

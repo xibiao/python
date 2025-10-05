@@ -58,10 +58,10 @@ def logout(request):
 
 
 def gene_image_code(request):
-    # 获取静态文件目录（在settings.py文件中 STATICFILES_DIRS 配置为[BASE_DIR / 'app01/static']）
+    # 获取静态文件目录（在settings.py文件中 STATICFILES_DIRS 配置为[BASE_DIR / 'app01']）
     static_dir = settings.STATICFILES_DIRS[0]
     # 获取字体文件的绝对路径
-    font_path = os.path.join(static_dir, 'font', 'Monaco.ttf')
+    font_path = os.path.join(static_dir, 'static/font', 'Monaco.ttf')
     # 或使用static函数
     # font_path = os.path.join(settings.BASE_DIR, 'app01/static/font', 'Monaco.ttf')
     # print("font_path===", font_path)

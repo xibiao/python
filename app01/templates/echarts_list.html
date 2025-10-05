@@ -1,0 +1,221 @@
+{% extends 'basic_layout.html' %}
+
+{% load static %}
+
+{% block js %}
+    <script src="{% static 'plugins/echarts-6.0.0/echarts.min.js' %}"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 参考：https://echarts.apache.org/examples/zh/index.html#chart-type-line
+            // 初始化折线图
+            initLine();
+            // 初始化柱状图
+            initBar();
+            // 初始化饼图
+            initPie();
+        })
+
+        /**
+         * 初始化折线图
+         */
+        function initLine() {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('m1'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: 'Stacked Line'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['Email', 'Video Ads', 'Direct', 'Search Engine'],
+                    bottom: 0
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        name: 'Email',
+                        type: 'line',
+                        stack: 'Total',
+                        data: [120, 132, 101, 134, 90, 230, 210]
+                    },
+                    {
+                        name: 'Video Ads',
+                        type: 'line',
+                        stack: 'Total',
+                        data: [150, 232, 201, 154, 190, 330, 410]
+                    },
+                    {
+                        name: 'Direct',
+                        type: 'line',
+                        stack: 'Total',
+                        data: [320, 332, 301, 334, 390, 330, 320]
+                    },
+                    {
+                        name: 'Search Engine',
+                        type: 'line',
+                        stack: 'Total',
+                        data: [820, 932, 901, 934, 1290, 1330, 1320]
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+        /**
+         * 初始化柱状图
+         */
+        function initBar() {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('m2'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '商品销量和利润',
+                    left: 'center',
+                    textAlign: 'auto'
+                },
+                tooltip: {},
+                legend: {
+                    data: ['销量', '利润'],
+                    bottom: 0
+                },
+                xAxis: {
+                    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+                },
+                yAxis: {},
+                series: [
+                    {
+                        name: '销量',
+                        type: 'bar',
+                        data: [5, 20, 36, 10, 30, 20]
+                    },
+                    {
+                        name: '利润',
+                        type: 'bar',
+                        data: [15, 50, 70, 30, 55, 35]
+                    }
+                ]
+            };
+
+            $.ajax({
+                url: '/echarts/bar/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status) {
+                        option.legend.data = res.data.legend;
+                        option.xAxis.data = res.data.x_axis;
+                        option.series = res.data.series;
+                        // 使用刚指定的配置项和数据显示图表。
+                        myChart.setOption(option);
+                    }
+                }
+            })
+        }
+
+        /**
+         * 初始化饼图
+         */
+        function initPie() {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('m3'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '联通部门预算占比',
+                    subtext: '上海分公司',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    {#orient: 'vertical',#}
+                    {#left: 'left'#}
+                    bottom: 0
+                },
+                series: [
+                    {
+                        name: '预算',
+                        type: 'pie',
+                        radius: '50%',
+                        data: [
+                            {value: 1048, name: 'IT部'},
+                            {value: 735, name: '运营部'},
+                            {value: 580, name: '新媒体部'},
+                            {value: 484, name: '市场部'},
+                            {value: 300, name: '运维部'}
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">折线图</div>
+            <div class="panel-body">
+                <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+                <div id="m1" style="width:100%;height:300px;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">柱状图</div>
+                    <div class="panel-body">
+                        <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+                        <div id="m2" style="width:100%;height:300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">饼图</div>
+                    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+                    <div id="m3" style="width:100%;height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
